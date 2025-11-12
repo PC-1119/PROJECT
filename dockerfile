@@ -1,11 +1,15 @@
-# Use an official Python base image
-FROM python:3.10-slim
+# Use official Python image
+FROM python:3.9-slim
 
-# Set the working directory inside the container
+# Set working directory
 WORKDIR /app
 
-# Copy your Python script into the container
-COPY app.py .
+# Copy app code and requirements
+COPY app.py /app
+COPY requirements.txt /app
 
-# Command to run your app
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Run the app
 CMD ["python", "app.py"]
