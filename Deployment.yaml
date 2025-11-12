@@ -5,7 +5,7 @@ metadata:
   labels:
     app: hello-world
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: hello-world
@@ -16,7 +16,6 @@ spec:
     spec:
       containers:
       - name: hello-world-container
-        image: PC1119/hello-world-app:latest   # 👉 replace with your image name
-        imagePullPolicy: IfNotPresent
+        image: pc1119/my-world   # 👉 replace with your image name
         ports:
         - containerPort: 8080
